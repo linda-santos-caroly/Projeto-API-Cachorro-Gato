@@ -1,0 +1,76 @@
+*{
+    padding: 0;
+    margin:0;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+
+
+h1{
+    font-size: 24px;
+}
+@media (min-width:720px){
+    h1{font-size: 36px;}
+}
+@media (min-width:1024px){
+    h1{font-size: 42px;}
+}
+
+section{
+   
+    margin: 5% auto;
+    padding-top: 40;
+    text-align: center;
+    line-height: 25px;
+
+}
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  .navbar{
+    min-height: 5vh;
+    display:flex;
+    justify-content: space-between;
+    box-shadow:  0 0 0 10px rgba(117, 185, 137, 0.247);
+   
+    
+    padding: 12px 28px ;
+    font-weight: 700;
+    font-size: larger;
+    align-items: center;
+    letter-spacing: 3px;
+
+}
+.navbar .logo{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+.navbar .menu{
+    display: flex;
+    list-style: none;
+}
+    
+
+
+.button-pet{
+    margin-right: 38px;
+    text-decoration: none;
+    color: black;
+    border-color: rgba(117, 185, 137, 0.247);
+    padding: 8px 8px 8px 8px;
+    border-radius: 10px;
+    box-shadow:  5px 2px 0 1px rgba(22, 26, 23, 0.247);
+
+}
+#lista-gatos {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
