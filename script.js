@@ -1,3 +1,15 @@
+
+
+
+document.getElementById('app-inicio').addEventListener('click', function() {
+    // Redireciona para a página inicial (index.html)
+    window.location.href = 'index.html';
+    navigator.vibrate([100, 100, 500])
+  });
+  
+
+
+
 const botaoGato = document.getElementById('app-gato')
 
 botaoGato.addEventListener('click', function() {
@@ -65,11 +77,11 @@ botaoCachorro.addEventListener('click', function() {
         dogList.innerHTML = ''; 
         
         
-        dogs.forEach(cat => {
+        dogs.forEach(dog => {
             const listItem = document.createElement('li');  
-            console.log(cat)
+            console.log(dog)
             
-            listItem.innerHTML = `<img src="${cat.url}" alt="${cat.id}">`;
+            listItem.innerHTML = `<img src="${dog.url}" alt="${dog.id}">`;
             
             
             dogList.appendChild(listItem);

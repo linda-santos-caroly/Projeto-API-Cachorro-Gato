@@ -5,7 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="/images/paw-solid.svg">
+    <meta name="description" content="Info Pets"/>
+    <meta name="theme-color" content="#75b9893f"/>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="manifest.json">
     <title>Info Pets</title>
+
     <link rel="shortcut icon" href="images/paw-solid.svg" type="image/x-icon">
     <!-- <script src="https://kit.fontawesome.com/ad4c6f99ab.js" crossorigin="anonymous"></script> -->
 </head>
@@ -14,7 +19,7 @@
         <nav class="navbar">
             <div class="logo">
                 <ul>
-                    <li><button class="button-pet" href="./index.html"><img class="pata-logo" src="./images/paw-solid.svg" width="50" alt="">Início</button></li>
+                    <li id="app-inicio"><button class="button-pet"><img class="pata-logo" src="./images/paw-solid.svg" width="50" alt="">Início</button></li>
                 </ul>
             </div>
             <ul class="menu">
@@ -29,6 +34,11 @@
         <ul id="lista"></ul>
     </section>
     <script src="script.js"></script>
+    <script>
+        if('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('/service-worker.js', { scope: '/' });
+        }
+        </script>
     
 </body>
 </html>

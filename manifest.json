@@ -1,0 +1,66 @@
+{
+    "id":"/",
+    "name": "Info Pets",
+    "short_name":"InfoPets",
+    "theme_color":"#000000",
+    "background_color":"#75b9893f",
+    "display":"standalone",
+    "description": "",
+    "orientation":"portrait",
+    "start_url": "/",
+    "icons": [
+        {
+            "src":"/icons/72.png",
+            "sizes":"72x72",
+            "type":"image/png"
+        },
+        {
+            "src":"/icons/92.png",
+            "sizes":"92x92",
+            "type":"image/png"
+        },
+        {
+            "src":"/icons/108.png",
+            "sizes":"108x108",
+            "type":"image/png"
+        },
+        {
+            "src":"/icons/144.png",
+            "sizes":"144x144",
+            "type":"image/png"
+        },
+        {
+            "src":"/icons/172.png",
+            "sizes":"172x172",
+            "type":"image/png"
+        },
+        {
+            "src":"/icons/196.png",
+            "sizes":"196x196",
+            "type":"image/png",
+            "purpose":"maskable"
+
+        },
+        {
+            "src":"/icons/256.png",
+            "sizes":"256x256",
+            "type":"image/png"
+        },
+        {
+            "src":"/icons/512.png",
+            "sizes":"512x512",
+            "type":"image/png"
+        },
+        {
+            "src":"/icons/1024.png",
+            "sizes":"1024x1024",
+            "type":"image/png"
+        }
+
+
+        
+    ]
+
+
+
+}
