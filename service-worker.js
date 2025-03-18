@@ -1,36 +1,36 @@
-const CACHE_NAME = `InfoPets`;
 
-self.addEventListener('install', event => {
-  event.waitUntil((async () => {
-    const cache = await caches.open(CACHE_NAME);
-    cache.addAll([
-      '/',
-      '/index.html',
-      '/script.js',
-      '/style.css'
-    ]);
-  })());
+self.addEventListener("install", (event) => {
+  event.waitUntil(
+    caches
+      .open("InfoPets")
+      .then((cache) =>
+        cache.addAll([
+          "/",
+          "/index.html",
+          "/style.css",
+          "/script.js",
+         ,
+        ]),
+      ),
+  );
 });
+const cacheName = 'InfoPets';
 
-
-
-
-
-self.addEventListener('fetch', event => {
-  event.respondWith((async () => {
-    const cache = await caches.open(CACHE_NAME);
-
-    const cachedResponse = await cache.match(event.request);
-    if (cachedResponse) {
-      return cachedResponse;
-    } else {
-        try {
-          const fetchResponse = await fetch(event.request);
-
-          cache.put(event.request, fetchResponse.clone());
-          return fetchResponse;
-        } catch (e) {
-        }
-    }
-  })());
+self.addEventListener('fetch', (event) => {
+  // Check if this is a navigation request
+  if (event.request.mode === 'navigate') {
+    // Open the cache
+    event.respondWith(caches.open(cacheName).then(async (cache) => {
+      // Go to the network first
+      try {
+        const fetchedResponse = await fetch(event.request.url);
+        cache.put(event.request, fetchedResponse.clone());
+        return fetchedResponse;
+      } catch {
+        return await cache.match(event.request.url);
+      }
+    }));
+  } else {
+    return;
+  }
 });
