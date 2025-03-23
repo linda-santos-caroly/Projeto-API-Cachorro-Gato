@@ -1,8 +1,8 @@
 
 
+const botaoInicio = document.getElementById('app-inicio');
+botaoInicio.addEventListener('click', function() {
 
-document.getElementById('app-inicio').addEventListener('click', function() {
-    // Redireciona para a página inicial (index.html)
     window.location.href = 'index.html';
     navigator.vibrate([100, 100, 500])
   });
@@ -10,9 +10,47 @@ document.getElementById('app-inicio').addEventListener('click', function() {
 
 
 
-const botaoGato = document.getElementById('app-gato')
+const botaoCadastro = document.getElementById('botao-cadastro')
+botaoCadastro.addEventListener('click', function(){
+    const catList = document.getElementById('lista');
+    catList.innerHTML = '';
+    const petCadastro = document.getElementById("cadastro");
+    petCadastro.innerHTML = `<p>Cadastre seu pet</p>
+            <form id="form-cadastro">
+                <label for="nome">Nome do pet:</label><br>
+                <input type="text" id="nome" name="nome" required ><br>
+                <label for="raca">Raça:</label><br>
+                <input type="text" id="raca" name="raca"><br>
+                <label for="especie">Espécie:</label><br>
+                <input type="text" id="especie" name="especie"required><br><br>
+                <input type="submit" value="Submit">
+              </form>`
+
+              const formCadastro = document.getElementById('form-cadastro');
+              formCadastro.addEventListener('submit', async function(event){
+                  event.preventDefault();
+              
+                  const formData = new FormData(formCadastro);
+                  const formObject = Object.fromEntries(formData);  
+                  const formString = JSON.stringify(formObject); 
+                  console.log("Dados do formulário:", formString); 
+                  const myHeaders = new Headers();
+                  myHeaders.append("Content-Type", "application/json");
+                  await fetch("https://back-api-infopets.onrender.com/pets", {
+                      method: "POST",
+                      body: formString,
+                      headers: myHeaders
+                  });
+                 
+             });
+
+})
+
+const botaoGato = document.getElementById('app-gato');
 
 botaoGato.addEventListener('click', function() {
+    document.getElementById("cadastro").innerHTML = ''
+
     
     const url = 'https://api.thecatapi.com/v1/images/search?limit=10';
 
@@ -52,7 +90,9 @@ botaoGato.addEventListener('click', function() {
 
 const botaoCachorro = document.getElementById('app-cachorro')
 
+
 botaoCachorro.addEventListener('click', function() {
+    document.getElementById("cadastro").innerHTML = ''
     
     const url = 'https://api.thedogapi.com/v1/images/search?limit=10';
 
@@ -75,6 +115,8 @@ botaoCachorro.addEventListener('click', function() {
     function displayDogs(dogs) {
         const dogList = document.getElementById('lista');
         dogList.innerHTML = ''; 
+        const elementoP = document.getElementById('apresentacao');
+        elementoP.innerHTML = "Fotos aleatórias de cachorro ou de gato";
         
         
         dogs.forEach(dog => {
