@@ -1,91 +1,4 @@
-/* *{
-    padding: 0;
-    margin:0;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
 
-
-
-
-h1{
-    font-size: 24px;
-}
-@media (min-width:720px){
-    h1{font-size: 36px;}
-}
-@media (min-width:1024px){
-    h1{font-size: 42px;}
-}
-
-section{
-   
-    margin: 5% auto;
-    padding-top: 40;
-    text-align: center;
-    line-height: 25px;
-
-}
-
-
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-
-
-.navbar{
-    min-height: 5vh;
-    display:flex;
-    justify-content: space-between;
-    box-shadow:  0 0 0 10px rgba(117, 185, 137, 0.247);
-
-    position: fixed;
-    top: 0;
-    z-index: 1000;
-    left: 50%;
-    transform: translateX(-50%);
-    width: auto;
-   
-    
-    padding: 12px 28px ;
-    font-weight: 700;
-    font-size: larger;
-    align-items: center;
-    letter-spacing: 3px;
- 
-}
-
-.navbar .logo{
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    
-}
-.navbar .menu{
-    display: flex;
-    list-style: none;
-}
-
-@media screen and (max-width: 768px) {
-
-    
-}
-    
-
-
-.button-pet{
-    margin-right: 38px;
-    text-decoration: none;
-    color: black;
-    border-color: rgba(117, 185, 137, 0.247);
-    padding: 8px 8px 8px 8px;
-    border-radius: 10px;
-    box-shadow:  5px 2px 0 1px rgba(22, 26, 23, 0.247);
-
-}
- */
 
  * {
     padding: 0;
@@ -122,7 +35,7 @@ ul {
     padding: 0;
 }
 
-/* Navbar fixa no topo da página */
+
 .navbar {
     min-height: 5vh;
     display: flex;
@@ -305,3 +218,129 @@ section{
         padding-top: 150px;
     }
 }
+#lista-pets {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para os itens da lista de pets */
+#lista-pets li {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+    line-height: 1.5;
+    transition: background-color 0.3s;
+}
+
+/* Efeito de hover ao passar o mouse sobre os itens */
+#lista-pets li:hover {
+    background-color: #f1f1f1;
+}
+
+/* Estilo para o nome do pet */
+#lista-pets .nome {
+    font-weight: bold;
+    color: #00796b;
+}
+
+/* Estilo para a raça do pet */
+#lista-pets .raca {
+    font-style: italic;
+    color: #d32f2f;
+}
+
+/* Estilo para a espécie do pet */
+#lista-pets .especie {
+    color: #1976d2;
+}
+
+/* Remover a borda inferior do último item */
+#lista-pets li:last-child {
+    border-bottom: none;
+}
+/* Estilo básico do corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 20px;
+}
+
+/* Estilo para o container do formulário */
+#cadastro {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para o título do formulário */
+#cadastro p {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #00796b;
+}
+
+/* Estilo para o formulário */
+#form-cadastro {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Estilo para os labels */
+#form-cadastro label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Estilo para os campos de entrada */
+#form-cadastro input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s;
+}
+
+/* Efeito ao focar nos campos de entrada */
+#form-cadastro input[type="text"]:focus {
+    border-color: #00796b;
+    outline: none;
+}
+
+/* Estilo para o botão de envio */
+#form-cadastro input[type="submit"] {
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: #00796b;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Efeito ao passar o mouse sobre o botão */
+#form-cadastro input[type="submit"]:hover {
+    background-color: #004d40;
+}
+
+/* Estilo para mensagens de erro ou sucesso (se necessário) */
+#form-cadastro .mensagem {
+    margin-top: 10px;
+    font-size: 14px;
+    text-align: center;
+    color: #d32f2f; /* Para mensagens de erro */
+}
+

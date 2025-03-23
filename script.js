@@ -41,15 +41,44 @@ botaoCadastro.addEventListener('click', function(){
                       body: formString,
                       headers: myHeaders
                   });
-                 
-             });
+                fetch("https://back-api-infopets.onrender.com/pets")
+                .then(response => {
+                
+                    if (!response.ok) {
+                        throw new Error('Erro ao consumir a API');
+                    }
+                    return response.json(); 
+                })
+                .then(pets => {
+                    const elementoPet = document.getElementById('lista-pets')
+                    elementoPet.innerHTML = '';
+                    
+                    pets.forEach(pet =>{
+                        
+                        const unidadePet = document.createElement('li');
+                        unidadePet.innerHTML = `<span class="nome">Nome:${pet.nome}</span> - <span class="raca">Raça: ${pet.raca}</span> - <span class="especie">Espécie: ${pet.especie}</span>`;
+                        elementoPet.appendChild(unidadePet);
+
+                    })
+
+
+
+
+                })
+                .catch(error => {
+                    console.error('Erro:', error); 
+                })
+               
+            });
 
 })
 
 const botaoGato = document.getElementById('app-gato');
 
 botaoGato.addEventListener('click', function() {
-    document.getElementById("cadastro").innerHTML = ''
+    document.getElementById("cadastro").innerHTML = '';
+    document.getElementById("lista-pets").innerHTML = '';
+
 
     
     const url = 'https://api.thecatapi.com/v1/images/search?limit=10';
@@ -92,7 +121,9 @@ const botaoCachorro = document.getElementById('app-cachorro')
 
 
 botaoCachorro.addEventListener('click', function() {
-    document.getElementById("cadastro").innerHTML = ''
+    document.getElementById("cadastro").innerHTML = '';
+    document.getElementById("lista-pets").innerHTML = '';
+
     
     const url = 'https://api.thedogapi.com/v1/images/search?limit=10';
 
